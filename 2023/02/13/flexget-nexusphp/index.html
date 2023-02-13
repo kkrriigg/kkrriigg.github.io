@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Flexget插件，增强对NexusPHP的过滤 - 个人博客</title>
+
+  
+    <meta name="description" content="flexget-nexusphpFlexget插件，增强对NexusPHP的过滤过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况- 站点支持列表- 支持作者更多插件：IO过高时停止任务插件 免责声明本插件会爬取details.php页面，请将参数限制到合理的范围，减轻对服务器负担本插件已尽量减轻服务器负担，因本插件造成账号封禁等损失，请自行承担后果建议 将RSS条目限制在20条以内，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flexget插件，增强对NexusPHP的过滤">
+<meta property="og:url" content="http://example.com/2023/02/13/flexget-nexusphp/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="flexget-nexusphpFlexget插件，增强对NexusPHP的过滤过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况- 站点支持列表- 支持作者更多插件：IO过高时停止任务插件 免责声明本插件会爬取details.php页面，请将参数限制到合理的范围，减轻对服务器负担本插件已尽量减轻服务器负担，因本插件造成账号封禁等损失，请自行承担后果建议 将RSS条目限制在20条以内，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-12T16:45:41.919Z">
+<meta property="article:modified_time" content="2023-02-12T16:47:26.765Z">
+<meta property="article:tag" content="flexget">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">个人博客</div><div class="sub normal cap">— 🖖 浪子游心 🦋 —</div><div class="sub hover cap" style="opacity:0">—  www.lxypcc.ga  —</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">博客</a><a class="nav-item" href="/about/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Flexget插件，增强对NexusPHP的过滤</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flexget%E6%8F%92%E4%BB%B6%EF%BC%8C%E5%A2%9E%E5%BC%BA%E5%AF%B9NexusPHP%E7%9A%84%E8%BF%87%E6%BB%A4%E8%BF%87%E6%BB%A4%E6%9D%A1%E4%BB%B6%E5%8C%85%E6%8B%AC%E7%A7%8D%E5%AD%90%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF%EF%BC%88free%E7%AD%89%EF%BC%89%E3%80%81%E5%81%9A%E7%A7%8D%E8%80%85%E6%83%85%E5%86%B5%E3%80%81%E4%B8%8B%E8%BD%BD%E8%80%85%E6%83%85%E5%86%B5-%E7%AB%99%E7%82%B9%E6%94%AF%E6%8C%81%E5%88%97%E8%A1%A8-%E6%94%AF%E6%8C%81%E4%BD%9C%E8%80%85"><span class="toc-text">Flexget插件，增强对NexusPHP的过滤过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况- 站点支持列表- 支持作者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E"><span class="toc-text">免责声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">运行环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE"><span class="toc-text">简单配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE"><span class="toc-text">完整配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE"><span class="toc-text">详细配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="toc-text">完整配置示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8D%E8%B4%B9%E7%83%AD%E7%A7%8D"><span class="toc-text">免费热种</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E7%A7%8D"><span class="toc-text">热种</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%BF%E5%85%8DHR"><span class="toc-text">避免HR</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84python%E7%89%88%E6%9C%AC%E6%98%AF2-X%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="toc-text">我的python版本是2.X如何使用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%89%8D%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9B%E7%AB%99%E7%82%B9"><span class="toc-text">目前支持哪些站点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E7%AB%99%E7%82%B9%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81"><span class="toc-text">如何判断站点是否支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4cookie%E6%AD%A3%E7%A1%AE%EF%BC%8C%E8%BF%98%E6%98%AF%E6%8F%90%E7%A4%BA-Can%E2%80%99t-access-the-site-Your-cookie-may-be-wrong"><span class="toc-text">确认cookie正确，还是提示 Can’t access the site. Your cookie may be wrong!</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E5%90%AF%E7%94%A8%E4%BA%86Cloudflare%E4%BA%94%E7%A7%92%E7%9B%BE%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF"><span class="toc-text">站点启用了Cloudflare五秒盾无法获取信息</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/qq.svg"/></a><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/email.svg"/></a><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/travelling.svg"/></a><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/comments.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/PT/">PT</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-02-12T16:45:41.919Z">2023-02-13</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>Flexget插件，增强对NexusPHP的过滤</span></h1>
+<h1 id="flexget-nexusphp"><a href="#flexget-nexusphp" class="headerlink" title="flexget-nexusphp"></a>flexget-nexusphp</h1><h2 id="Flexget插件，增强对NexusPHP的过滤过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况-站点支持列表-支持作者"><a href="#Flexget插件，增强对NexusPHP的过滤过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况-站点支持列表-支持作者" class="headerlink" title="Flexget插件，增强对NexusPHP的过滤过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况- 站点支持列表- 支持作者"></a>Flexget插件，增强对NexusPHP的过滤<br><br>过滤条件包括种子优惠信息（free等）、做种者情况、下载者情况<br>- <a href="#site">站点支持列表</a><br>- <a href="#donate">支持作者</a></h2><p>更多插件：<a target="_blank" rel="noopener" href="https://github.com/Juszoe/flexget-limiter">IO过高时停止任务插件</a></p>
+<h2 id="免责声明"><a href="#免责声明" class="headerlink" title="免责声明"></a>免责声明</h2><p>本插件会爬取details.php页面，请将参数限制到合理的范围，减轻对服务器负担<br><br>本插件已尽量减轻服务器负担，因本插件造成账号封禁等损失，请自行承担后果<br><br><strong>建议</strong> 将RSS条目限制在20条以内，将Flexget运行频率设置在10分钟以上。<br>如果不想对人数进行过滤，不建议设置seeders和leechers参数。<br></p>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://flexget.com/">Flexget</a></li>
+<li>Python 3.X 或 Python 2.7 <a href="#version">其他版本解决方案</a></li>
+</ul>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><ol>
+<li>下载插件 <a target="_blank" rel="noopener" href="https://github.com/Juszoe/flexget-nexusphp/releases">nexusphp.py</a></li>
+<li>在Flexget配置文件夹下新建plugins文件夹，例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/.flexget/plugins/  # Linux</span><br><span class="line">C:\Users\&lt;YOURUSER&gt;\flexget\plugins\  # Windows</span><br></pre></td></tr></table></figure>
+再次注意<code>plugins</code>文件夹和<code>config.yml</code>处在同一级目录下，例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/.flxget</span><br><span class="line">  ┕━config.yml</span><br><span class="line">  ┕━plugins</span><br><span class="line">    ┕━nexusphp.py</span><br></pre></td></tr></table></figure></li>
+<li>将插件拷贝至plugins</li>
+<li>若启用了Web-UI或守护进程，则重启flexget重新加载配置</li>
+</ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li>编辑flexget配置文件，添加nexusphp选项，按照需要进行配置</li>
+</ol>
+<h4 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nexusphp:</span></span><br><span class="line">  <span class="attr">cookie:</span> <span class="string">&#x27;a=xxx; b=xxx&#x27;</span>  <span class="comment"># 必填</span></span><br><span class="line">  <span class="attr">discount:</span>  <span class="comment"># 优惠信息 选填</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">free</span></span><br></pre></td></tr></table></figure>
+<h4 id="完整配置"><a href="#完整配置" class="headerlink" title="完整配置"></a>完整配置</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">nexusphp:</span></span><br><span class="line">  <span class="attr">cookie:</span> <span class="string">&#x27;a=xxx; b=xxx&#x27;</span>  <span class="comment"># 必填</span></span><br><span class="line">  <span class="attr">discount:</span>  <span class="comment"># 优惠信息 选填</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">free</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">2x</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">2x50%</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">2xfree</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">50</span><span class="string">%</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">30</span><span class="string">%</span></span><br><span class="line">  <span class="attr">seeders:</span>  <span class="comment"># 做种情况 选填（兼容性较差不建议使用）</span></span><br><span class="line">    <span class="attr">min:</span> <span class="number">1</span></span><br><span class="line">    <span class="attr">max:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">leechers:</span>  <span class="comment"># 下载情况 选填（兼容性较差不建议使用）</span></span><br><span class="line">    <span class="attr">min:</span> <span class="number">10</span></span><br><span class="line">    <span class="attr">max:</span> <span class="number">100</span></span><br><span class="line">    <span class="attr">max_complete:</span> <span class="number">0.8</span></span><br><span class="line">  <span class="attr">left-time:</span> <span class="number">1</span> <span class="string">hours</span>  <span class="comment"># 优惠剩余时间 选填</span></span><br><span class="line">  <span class="attr">hr:</span> <span class="literal">no</span>  <span class="comment"># 是否下载HR 选填</span></span><br><span class="line">  <span class="attr">adapter:</span>  <span class="comment"># 站点适配器，自行适配站点，参考最下方常见问题 选填</span></span><br><span class="line">    <span class="attr">free:</span> <span class="string">free</span></span><br><span class="line">    <span class="attr">2x:</span> <span class="string">twoup</span></span><br><span class="line">    <span class="attr">2xfree:</span> <span class="string">twoupfree</span></span><br><span class="line">    <span class="number">30</span><span class="string">%:</span> <span class="string">thirtypercent</span></span><br><span class="line">    <span class="number">50</span><span class="string">%:</span> <span class="string">halfdown</span></span><br><span class="line">    <span class="string">2x50%:</span> <span class="string">twouphalfdown</span></span><br><span class="line">  <span class="attr">comment:</span> <span class="literal">no</span>  <span class="comment"># 在torrent注释中添加详情链接 选填</span></span><br><span class="line">  <span class="attr">user-agent:</span> <span class="string">xxxxxx</span>  <span class="comment"># 浏览器标识 选填</span></span><br><span class="line">  <span class="attr">remember:</span> <span class="literal">yes</span>  <span class="comment"># 记住优惠信息 选填 请勿随意设置</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>为rss的other_fields字段添加link属性<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rss:</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">https://www.example.com/rss</span></span><br><span class="line">  <span class="attr">other_fields:</span> [<span class="string">link</span>]</span><br></pre></td></tr></table></figure></li>
+<li>启动flexget<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flexget execute</span><br><span class="line"><span class="comment"># 如果仅仅想要测试而不下载，可以添加 --test 参数</span></span><br><span class="line">flexget --<span class="built_in">test</span> execute</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="详细配置"><a href="#详细配置" class="headerlink" title="详细配置"></a>详细配置</h2><ul>
+<li><code>cookie</code> <strong>网站cookie</strong> 必须填写</li>
+<li><code>discount</code> <strong>优惠类型</strong> 默认不限制优惠类型。<br><br>列表类型，Flexget会只下载含有列表内优惠类型的种子。<br><br>有效值：<code>free 2x 2x50% 2xfree 50% 30%</code><br><br><code>注意：x为英文字母</code></li>
+<li><code>seeders</code> <strong>做种情况</strong> 做种人数超出范围的，Flexget将不会下载<ul>
+<li><code>注意：此选项兼容性较差</code></li>
+<li><code>min</code> 最小做种人数。整数，默认不限制</li>
+<li><code>max</code> 最大做种人数。整数，默认不限制</li>
+</ul>
+</li>
+<li><code>leechers</code> <strong>下载情况</strong> 下载人数超出范围的，Flexget将不会下载<ul>
+<li><code>注意：此选项兼容性较差</code></li>
+<li><code>min</code> 最小下载人数。整数，默认不限制</li>
+<li><code>max</code> 最大下载人数。整数，默认不限制</li>
+</ul>
+</li>
+<li><code>max_complete</code> <strong>下载者中最大完成度</strong> 超过这个值将不下载。<br>小数，范围<code>0-1.0</code>，默认为1</li>
+<li><code>left-time</code> <strong>最小剩余时间</strong> 当实际剩余时间小于设置的值，则不下载。<br>时间字符串，例如 <code>3 hours</code>、<code>10 minutes</code>、<code>1 days</code>。<br>例如设置<code>1 hours</code>，优惠剩余59分钟，那么就不下载。默认不限制</li>
+<li><code>hr</code> <strong>是否下载HR种</strong> 默认 yes<br><ol>
+<li><code>yes</code> 会下载HR，即不过滤HR<br></li>
+<li><code>no</code> 不下载HR<br></li>
+</ol>
+</li>
+<li><code>adapter</code> <strong>站点适配器</strong> 站点不兼容时可自定义，具体参考<br><a target="_blank" rel="noopener" href="https://github.com/Juszoe/flexget-nexusphp/blob/master/site.md">判断站点以及适配站点</a></li>
+<li><code>comment</code> <strong>在torrent注释中添加详情链接</strong><br><ol>
+<li><code>yes</code> 在torrent注释中添加详情链接，方便在BT客户端查看<br></li>
+<li><code>no</code> 默认值<br></li>
+</ol>
+</li>
+<li><code>user-agent</code> <strong>浏览器标识</strong> 默认为Google浏览器</li>
+<li><code>remember</code> <strong>记住优惠信息</strong> 不建议设置为 no，因为会增大站点压力。默认 yes</li>
+</ul>
+<h2 id="完整配置示例"><a href="#完整配置示例" class="headerlink" title="完整配置示例"></a>完整配置示例</h2><h3 id="免费热种"><a href="#免费热种" class="headerlink" title="免费热种"></a>免费热种</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="attr">my-free-task:</span></span><br><span class="line">    <span class="attr">rss:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">https://www.example.com/rss.xml</span></span><br><span class="line">      <span class="attr">other_fields:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">link</span></span><br><span class="line">    <span class="attr">nexusphp:</span></span><br><span class="line">      <span class="attr">cookie:</span> <span class="string">&#x27;a=xxx; b=xxx&#x27;</span></span><br><span class="line">      <span class="attr">discount:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">free</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">2xfree</span></span><br><span class="line">    <span class="attr">download:</span> <span class="string">~/flexget/torrents/</span></span><br></pre></td></tr></table></figure>
+<h3 id="热种"><a href="#热种" class="headerlink" title="热种"></a>热种</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="attr">my-hot-task:</span></span><br><span class="line">    <span class="attr">rss:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">https://www.example.com/rss.xml</span></span><br><span class="line">      <span class="attr">other_fields:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">link</span></span><br><span class="line">    <span class="attr">nexusphp:</span></span><br><span class="line">      <span class="attr">cookie:</span> <span class="string">&#x27;a=xxx; b=xxx&#x27;</span></span><br><span class="line">      <span class="attr">seeders:</span></span><br><span class="line">        <span class="attr">min:</span> <span class="number">1</span></span><br><span class="line">      <span class="attr">leechers:</span></span><br><span class="line">        <span class="attr">min:</span> <span class="number">20</span></span><br><span class="line">    <span class="attr">download:</span> <span class="string">~/flexget/torrents/</span></span><br></pre></td></tr></table></figure>
+<h3 id="避免HR"><a href="#避免HR" class="headerlink" title="避免HR"></a>避免HR</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="attr">no-hr-task:</span></span><br><span class="line">    <span class="attr">rss:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">https://www.example.com/rss.xml</span></span><br><span class="line">      <span class="attr">other_fields:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">link</span></span><br><span class="line">    <span class="attr">nexusphp:</span></span><br><span class="line">      <span class="attr">cookie:</span> <span class="string">&#x27;a=xxx; b=xxx&#x27;</span></span><br><span class="line">      <span class="attr">hr:</span> <span class="literal">no</span></span><br><span class="line">    <span class="attr">download:</span> <span class="string">~/flexget/torrents/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="我的python版本是2-X如何使用？"><a href="#我的python版本是2-X如何使用？" class="headerlink" title="我的python版本是2.X如何使用？"></a>我的python版本是2.X如何使用？</h3><p><span id="version"></span><br>本插件只支持Python 3.X或Python 2.7版本，其他版本不可用，请卸载Flexget后使用Python3重装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall flexget  <span class="comment"># 卸载</span></span><br><span class="line">pip3 install flexget  <span class="comment"># 使用pip3安装</span></span><br></pre></td></tr></table></figure>
+<h3 id="目前支持哪些站点"><a href="#目前支持哪些站点" class="headerlink" title="目前支持哪些站点"></a>目前支持哪些站点</h3><p><span id="site"></span><br>如果站点禁止使用脚本爬虫，应立即停止使用本插件</p>
+<ul>
+<li>任何未修改关键结构的nexusphp站点</li>
+<li>PTH</li>
+<li>MT（站点安全性较高，<a href="#user-agent">ip或浏览器变动</a>可能无法访问）</li>
+<li>OB</li>
+<li>Sky</li>
+<li>School</li>
+<li>U2</li>
+<li>CHD</li>
+<li>TJU（禁止脚本，请勿使用）</li>
+<li>SSD</li>
+<li>OpenCD</li>
+<li>TTG（不支持人数筛选）</li>
+<li>FRDS</li>
+<li>Dream</li>
+<li>HDC</li>
+<li>LemonHD</li>
+</ul>
+<h3 id="如何判断站点是否支持"><a href="#如何判断站点是否支持" class="headerlink" title="如何判断站点是否支持"></a>如何判断站点是否支持</h3><p><a target="_blank" rel="noopener" href="https://github.com/Juszoe/flexget-nexusphp/blob/master/site.md">判断站点以及适配站点</a></p>
+<h3 id="确认cookie正确，还是提示-Can’t-access-the-site-Your-cookie-may-be-wrong"><a href="#确认cookie正确，还是提示-Can’t-access-the-site-Your-cookie-may-be-wrong" class="headerlink" title="确认cookie正确，还是提示 Can’t access the site. Your cookie may be wrong!"></a>确认cookie正确，还是提示 Can’t access the site. Your cookie may be wrong!</h3><p><span id="user-agent"></span><br>某些站点安全性要求较高，ip或浏览器变动时无法使用cookie访问，需要重新登录。<br><br>解决办法：设置 user-agent 参数与浏览器相同，查看浏览器user-agent的方法自行搜索，并保证登录ip与使用Flexget相同。</p>
+<h3 id="站点启用了Cloudflare五秒盾无法获取信息"><a href="#站点启用了Cloudflare五秒盾无法获取信息" class="headerlink" title="站点启用了Cloudflare五秒盾无法获取信息"></a>站点启用了Cloudflare五秒盾无法获取信息</h3><p>当触发Cloudflare五秒盾通常有以下提示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NexusPHP._get_info: 503 Server Error: Service Temporarily Unavailable for url</span><br></pre></td></tr></table></figure>
+<p>解决方案也很简单，可以考虑使用Flexget官方内置的插件<a target="_blank" rel="noopener" href="https://flexget.com/Plugins/cfscraper">cfscraper</a></p>
+<ol>
+<li>首先需要安装依赖<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install cloudscraper</span><br></pre></td></tr></table></figure></li>
+<li>然后启用<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cfscraper:</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+<strong>注意！绕过站点安全机制可能有风险，自行决定是否使用</strong></li>
+</ol>
+
+
+
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/02/13/frp/">家用宽带无公网IP怎么在外访问Nas——Frp内网穿透暴露公网访问及微信回调简明教程</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/02/12/natter/">Natter，不需要中转的内网穿透工具</a></div></section></div>
+
+
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2023\02\12\省心的馒头保号教程\" title="省心的馒头保号教程"><span class="title">省心的馒头保号教程</span></a></div></section></div>
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body artalk'>
+      
+
+<div id="artalk_container"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"></div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_artalk() {
+    if (!document.querySelectorAll("#artalk_container")[0]) return;
+    stellar.loadCSS('https://unpkg.com/artalk@2.4.3/dist/Artalk.css');
+    stellar.loadScript('https://unpkg.com/artalk@2.4.3/dist/Artalk.js', {defer: true}).then(function () {
+      const el = document.getElementById("artalk_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      var artalk = new Artalk({
+        el: '#artalk_container',
+        pageKey: path,
+        pageTitle: 'Flexget插件，增强对NexusPHP的过滤',
+        server: 'http://nas.lxypcc.tk:23366',
+        placeholder: '',
+        site: '个人博客',
+        darkMode: 'false'
+        })
+      });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    load_artalk();
+  });
+</script>
+
+
+
+<!-- inject -->
+
+
+  </div>
+<!-- hexo injector body_end start -->
+  <style>
+    .highlight {
+      position: relative;
+    }
+    .highlight .code .copy-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 0.5rem;
+      opacity: 0.25;
+      font-weight: 700;
+      color: var(--theme);
+      cursor: pointer;
+      transination: opacity 0.3s;
+    }
+    .highlight .code .copy-btn:hover{
+      color: var(--text-code);
+      opacity: 0.75;
+    }
+    .highlight .code .copy-btn.success {
+      color: var(--swiper-theme-color);
+      opacity: 0.75;
+
+    }
+    
+  </style>
+  <script>
+    const codeElementArr = document.querySelectorAll('.code')
+    codeElementArr.forEach(code => {
+      const codeBeforeWidth = window.getComputedStyle(code, '::before').width.split('px')[0]
+      const codeBeforePadding = window.getComputedStyle(code, '::before').padding.split(' ').pop().split('px')[0]
+  
+      // copy btn 
+      const codeCopyBtn = document.createElement('div')
+      codeCopyBtn.classList.add('copy-btn')
+      codeCopyBtn.style.right = Number(codeBeforeWidth) + Number(codeBeforePadding) * 2 + 'px'
+      codeCopyBtn.innerText = '复制代码'
+      code.appendChild(codeCopyBtn)
+  
+      codeCopyBtn.addEventListener('click', async () => {
+        const currentCodeElement = code.children[0]?.innerText
+        await copyCode(currentCodeElement)
+
+
+        codeCopyBtn.innerText = '复制成功'
+        codeCopyBtn.classList.add('success')
+
+        setTimeout(() => {
+          codeCopyBtn.innerText = '复制代码'
+          codeCopyBtn.classList.remove('success')
+        },1000)
+      })
+    })
+    
+    async function copyCode(currentCode) {
+      console.log(currentCode)
+      console.log('复制代码')
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(currentCode)
+        } catch (error) {
+          // 未获得用户许可
+          console.error(error)
+        }
+      } else {
+        console.error('当前浏览器不支持此api')
+      }
+    }
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>

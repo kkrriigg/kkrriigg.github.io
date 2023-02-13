@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>省心的馒头保号教程 - 个人博客</title>
+
+  
+    <meta name="description" content="省心的馒头保号教程这是一个省心的馒头保号教程，可以轻而易举地把馒头刷到保号，甚至不花一分钱就能刷 50 TB 上传量。让我们告别上传量不够的烦恼，更沉浸于观影的快乐。 盒子是什么？ 我的理解：在 PT 里，盒子是装有 qBittorrent 等这一系列软件的云服务器，类似于家中一台 24 小时持续运行且有公网 IP 的电脑；按用途来分，多用于刷流，极少部分用于保种。 教程思路Hetzner 介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="省心的馒头保号教程">
+<meta property="og:url" content="http://example.com/2023/02/12/%E7%9C%81%E5%BF%83%E7%9A%84%E9%A6%92%E5%A4%B4%E4%BF%9D%E5%8F%B7%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="省心的馒头保号教程这是一个省心的馒头保号教程，可以轻而易举地把馒头刷到保号，甚至不花一分钱就能刷 50 TB 上传量。让我们告别上传量不够的烦恼，更沉浸于观影的快乐。 盒子是什么？ 我的理解：在 PT 里，盒子是装有 qBittorrent 等这一系列软件的云服务器，类似于家中一台 24 小时持续运行且有公网 IP 的电脑；按用途来分，多用于刷流，极少部分用于保种。 教程思路Hetzner 介">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90434a3dc5.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e904513402b.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e905b7e5249.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e905de22d13.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e905f767532.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9062595319.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90632bf738.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9063fc484d.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90654ba91f.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9066186c31.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9067b174f4.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9068b3f9fc.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906968c71e.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906a3d0d70.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906b10d43b.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906c32cc90.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906d52865c.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9071c2421f.jpeg">
+<meta property="og:image" content="https://dja6-ksvwjzd-qltxcezl-w6z7n-czu4ar4b.seeseeme.cn/ghcard/pin/username=jerry048&repo=Dedicated-Seedbox&&show_owner=true">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9077bd97b0.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079e9a9c6.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079ed0b4a.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079eaaf81.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079e852c6.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079f11256.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079f608da.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a0bc54d.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a2ae961.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a329592.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a305de1.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a35af6d.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a350bfe.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9085cd96ad.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a5f38b4.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a63c06b.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a625100.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90898bd3c6.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90898b8429.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90898d2ac5.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e908991e0be.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089990a21.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90899cd6bc.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089bed48b.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089d29fe7.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089bf12c1.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089beb41a.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089b9a1fa.png">
+<meta property="og:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089c34778.png">
+<meta property="article:published_time" content="2023-02-12T15:25:30.270Z">
+<meta property="article:modified_time" content="2023-02-12T15:43:25.021Z">
+<meta property="article:tag" content="PT">
+<meta property="article:tag" content="盒子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90434a3dc5.png">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">个人博客</div><div class="sub normal cap">— 🖖 浪子游心 🦋 —</div><div class="sub hover cap" style="opacity:0">—  www.lxypcc.ga  —</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">博客</a><a class="nav-item" href="/about/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">省心的馒头保号教程</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E7%A8%8B%E6%80%9D%E8%B7%AF"><span class="toc-text">教程思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hetzner-%E4%BB%8B%E7%BB%8D"><span class="toc-text">Hetzner 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B7%E5%A4%A7%E5%8C%85%E6%80%9D%E8%B7%AF"><span class="toc-text">刷大包思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E8%A7%84%E5%88%99"><span class="toc-text">站点规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hetzner-%E6%B3%A8%E5%86%8C"><span class="toc-text">Hetzner 注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%89%E6%8B%A9"><span class="toc-text">服务器选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">SSH 客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA-SSH-keys"><span class="toc-text">新建 SSH keys</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">选择服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">连接服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E6%B5%81%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85"><span class="toc-text">刷流系统安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%89%E6%8B%A9-1"><span class="toc-text">服务器选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-text">创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%88%B7%E6%B5%81%E7%B3%BB%E7%BB%9F"><span class="toc-text">安装刷流系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B7%E6%B5%81%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D"><span class="toc-text">刷流系统介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="toc-text">安装过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC"><span class="toc-text">一键脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%89%E8%A3%85%E7%BB%86%E8%8A%82"><span class="toc-text">具体安装细节</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qBittorrent-%E8%AE%BE%E7%BD%AE"><span class="toc-text">qBittorrent 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95"><span class="toc-text">登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E4%BC%98%E5%8C%96"><span class="toc-text">进阶优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F"><span class="toc-text">缓存大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5-I-x2F-O-%E7%BA%BF%E7%A8%8B%E6%95%B0"><span class="toc-text">异步 I&#x2F;O 线程数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%A7%8D%E5%AD%90"><span class="toc-text">添加种子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E9%80%9F"><span class="toc-text">限速</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%8C%85"><span class="toc-text">拆包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A2%E9%92%88%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">探针（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A2%E9%92%88%E4%BB%8B%E7%BB%8D"><span class="toc-text">探针介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%AA%E5%90%92%E7%9B%91%E6%8E%A7"><span class="toc-text">哪吒监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nodepanels"><span class="toc-text">Nodepanels</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Nodepanels-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">Nodepanels 使用方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-text">补充说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E5%BF%AB%E7%85%A7"><span class="toc-text">做快照</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%BC%80%E6%9C%BA"><span class="toc-text">批量开机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E8%BD%BD%E9%A2%9D%E5%A4%96%E7%9A%84%E7%A1%AC%E7%9B%98%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">挂载额外的硬盘（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E7%A1%AC%E7%9B%98"><span class="toc-text">购买硬盘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E4%BF%9D%E5%AD%98%E8%B7%AF%E5%BE%84"><span class="toc-text">更改保存路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E6%9D%83%E9%99%90"><span class="toc-text">更改权限</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E6%9C%BA"><span class="toc-text">删机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E7%A1%AC%E7%9B%98%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">分离硬盘（可选）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E4%B8%8E%E7%AD%94"><span class="toc-text">问与答</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9A%A0-%E9%A6%92%E5%A4%B4%E9%99%90%E9%80%9F%E8%A7%84%E5%88%99%EF%BC%9A%E5%8D%95%E7%A7%8D%E4%B8%8A%E4%BC%A0%E9%80%9F%E5%BA%A6%E5%B0%8F%E4%BA%8E-125-M-x2F-s%EF%BC%88%E5%8D%B3-125-MiB-x2F-s%EF%BC%89%EF%BC%8C%E9%9D%9E-VIP-%E8%B6%85%E9%80%9F%E5%8D%B3%E5%B0%81%E5%8F%B7%E3%80%82"><span class="toc-text">⚠ 馒头限速规则：单种上传速度小于 125 M&#x2F;s（即 125 MiB&#x2F;s），非 VIP 超速即封号。</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/qq.svg"/></a><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/email.svg"/></a><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/travelling.svg"/></a><a class="social" href="https://" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/assets/placeholder/social/comments.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/PT/">PT</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-02-12T15:25:30.270Z">2023-02-12</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>省心的馒头保号教程</span></h1>
+<span id="more"></span>
+
+<h1 id="省心的馒头保号教程"><a href="#省心的馒头保号教程" class="headerlink" title="省心的馒头保号教程"></a>省心的馒头保号教程</h1><p>这是一个省心的馒头保号教程，可以轻而易举地把馒头刷到保号，甚至不花一分钱就能刷 50 TB 上传量。让我们告别上传量不够的烦恼，更沉浸于观影的快乐。</p>
+<p><strong>盒子是什么？</strong></p>
+<p>我的理解：在 PT 里，盒子是装有 qBittorrent 等这一系列软件的云服务器，类似于家中一台 24 小时持续运行且有公网 IP 的电脑；按用途来分，多用于刷流，极少部分用于保种。</p>
+<h2 id="教程思路"><a href="#教程思路" class="headerlink" title="教程思路"></a>教程思路</h2><h3 id="Hetzner-介绍"><a href="#Hetzner-介绍" class="headerlink" title="Hetzner 介绍"></a>Hetzner 介绍</h3><p><a target="_blank" rel="noopener" href="https://www.hetzner.com/">Hetzner</a> 是一家数据中心运营商，他家服务器性能强劲、上行带宽大，大家都喜欢买他家的服务器来刷流。</p>
+<p><strong>点击展开，查看 Hetzner 服务器性能</strong></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90434a3dc5.png" alt="img"></p>
+<h3 id="刷大包思路"><a href="#刷大包思路" class="headerlink" title="刷大包思路"></a>刷大包思路</h3><p>因为 Hetzner 服务器计费方式是按小时计费，用了几个小时就给你算几个小时的钱。我往往是周末大包出来后用快照批量开多台服务器，一台服务器一个大包，等大包没速度了就删服务器，按小时计费这样更省钱。<br>我一般买 CPX11 这款来刷馒头大包，性价比高，本文也以此机型举例。<br>CPX11 在安装完刷流系统后，硬盘还有 31 GB 的剩余空间。我开多台服务器，一台服务器一个大包，选大包里的 30 GB 下载，也不用担心下少了上传跑不动，这是我上周跑的情况：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e904513402b.png" alt="img"></p>
+<p>2022 年 12 月 9 日这天，CPX11 的价格为 0.006 欧元一小时（折合人民币 0.044 元）。如果你是走别人推荐链接的话，可以白嫖 20 欧的试用金，不花钱就能刷 50 TB。</p>
+<h3 id="站点规则"><a href="#站点规则" class="headerlink" title="站点规则"></a>站点规则</h3><p><strong>熟记规则，避免翻车</strong></p>
+<p>限速规则：单种上传速度小于 125 M&#x2F;s（即 125 MiB&#x2F;s），非 VIP 超速即封号。</p>
+<p>我的单种上传速度上限设置为 90000 KiB&#x2F;s，比较保守。</p>
+<p><strong>熟记规则，避免翻车</strong></p>
+<p>盒子规则：</p>
+<ol>
+<li>下载种子时不享用任何种子促销</li>
+<li>在种子发布 72 小时之内，最多只能得到种子体积大小的 3 倍流量（种子大小为 1 GB，上传最多只能得到 3 GB）</li>
+<li>发布超过 72 小时后的种子统计的流量都是正常的</li>
+</ol>
+<p>盒子规则对我们影响不大，原因如下：</p>
+<ol>
+<li>大包中的绝大多数种子发布时间超过 72 小时，并不受 3 倍流量这一规则制约。</li>
+<li>就算种子发布时间不足 72 小时，我们也不亏。打个比方：种子体积大小为 500 GB，3 倍流量则是 1500 GB，我们只下载了 30 GB，能赚 1470 GB，完全不亏；一般来说周末出大包，等睡一觉星期一早上起来就能有 3 倍上传了，如果某个种子受 3 倍流量这一规则制约，我们大可以汇报、删机、跑路，这台服务器就停止计费了。</li>
+</ol>
+<h2 id="Hetzner-注册"><a href="#Hetzner-注册" class="headerlink" title="Hetzner 注册"></a>Hetzner 注册</h2><p>工欲善其事，必先利其器，首先我们需要注册一个 Hetzner 账户。<br>关于 Hetzner 的性能、注册等具体细节参考此文 <a target="_blank" rel="noopener" href="https://blog.laoda.de/archives/vps-hetzner">【VPS选购分享】Hetzner——欧洲阿里云！性能小钢炮！非常适合跑业务，还有适合刷PT的神鸡！</a>。<br>由于我已经注册过了，无法注册新号，所以无法手把手演示，注册还算简单，结合参考文章就行，我复述一下注册过程：</p>
+<ol>
+<li><p>点击他人的推荐链接（参考文章作者的推荐链接可用：<a target="_blank" rel="noopener" href="https://loll.cc/hz%EF%BC%89">https://loll.cc/hz）</a></p>
+</li>
+<li><p>选择无税区，使用真实 IP 和资料注册，不要开代理，姓名、地址、邮箱等要如实填写。</p>
+</li>
+<li><p>准备好身份证、手机，在注册完成后会进行人脸识别验证，通过验证才能开服务器。</p>
+</li>
+<li><p>如果忘了点别人的推荐链接注册，导致没有 20 欧试用金的话，这种情况下请勿开服务器，可以带上推荐链接联系客服手动添加。</p>
+<blockquote>
+<p>官方解答：<br>Q：Why is my referral Credit not visible in my account after I was invited by a friend?<br>A：Please send a request to our support team by opening a support ticket via Cloud Console. Please also provide the link you used for the registration.</p>
+</blockquote>
+</li>
+<li><p>还可以前往 <code>USAGE</code>，在 <code>REDEEM CODE</code> 处输入 <code>LTT23</code>（ 2023 年可用的新兑换码，来自热心吧友的提醒），有几率再得 20 欧。</p>
+</li>
+<li><p>至于这送的两个 20 欧有效期是多少，我也不清楚，因为我当时注册什么也不懂，没用邀请链接，也没用 <code>LTT23</code>，亏大了<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e905b7e5249.png" alt="img" style="zoom:5%;" />。</p>
+</li>
+<li><p>另外，Hetzner 家的服务器没被其他站点禁止，这 20 或 40 欧元可以拿去开服务器刷其他站点 。<br>但如果想刷其他站的话，一般来说：</p>
+</li>
+</ol>
+<ul>
+<li>效果：手动 &lt; qBittorrent 自带的 RSS + 正则表达式 &lt; 自动化工具；</li>
+<li>配置难度：手动 &lt; qBittorrent 自带的 RSS + 正则表达式（可参考 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-05-07/">无需安装任何软件，小白也能实现刷流</a>） &lt; 自动化工具；<br>其中自动化工具也不止一种，有简单的也有复杂的。<br><strong>最重要的是要充分熟悉站点的规则，才能刷流不翻车。</strong></li>
+</ul>
+<h2 id="服务器选择"><a href="#服务器选择" class="headerlink" title="服务器选择"></a>服务器选择</h2><h3 id="SSH-客户端"><a href="#SSH-客户端" class="headerlink" title="SSH 客户端"></a>SSH 客户端</h3><p>首先我们需要安装一个 SSH 客户端，以便能远程连接我们的云服务器。<br>我使用的是 Xshell，也推荐大家使用这个，原因如下：Xshell 提供了非商业用途的免费版，且官方自带中文，比各种未知来源的破解版、汉化版更值得信赖。<br>我们前往官方网站 <a target="_blank" rel="noopener" href="https://www.xshell.com/zh/free-for-home-school/">https://www.xshell.com/zh/free-for-home-school/</a> 申请（请注意网址，别被流氓区代理忽悠了），填入你的邮箱，你将会收到两封含软件下载链接的邮件，点击下载并安装，把 Xshell、Xftp 都安上。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e905de22d13.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e905f767532.png" alt="img"></p>
+<h3 id="新建-SSH-keys"><a href="#新建-SSH-keys" class="headerlink" title="新建 SSH keys"></a>新建 SSH keys</h3><p>Xshell 安装完成后打开，我们新建 SSH keys。<br>SSH keys 能让我们方便、安全地登录到服务器，而无需输入密码。<br>密钥类型推荐 <code>ED25519</code>，给用户密钥加密为可选项：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9062595319.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90632bf738.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9063fc484d.png" alt="img"></p>
+<p>接下来我们把生成的公钥复制，并前往 <a target="_blank" rel="noopener" href="https://console.hetzner.cloud/projects">Hetzner 控制台</a>，进入项目，将其填入：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90654ba91f.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9066186c31.png" alt="img"></p>
+<h3 id="选择服务器"><a href="#选择服务器" class="headerlink" title="选择服务器"></a>选择服务器</h3><p>因为我没白嫖到 20 欧，所以我选择 CPX11 这款来刷馒头大包，也够用；如果你们白嫖到了，大可以开更高配置的服务器或者挂载额外的硬盘。<br>以下是我的服务器配置选择项：</p>
+<p>区域：德国</p>
+<p>镜像：Debian 10</p>
+<p>服务器：CPX 11</p>
+<p>网络：IPV4、IPV6</p>
+<p>SSH keys：上一步填写的那个</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9067b174f4.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9068b3f9fc.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906968c71e.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906a3d0d70.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906b10d43b.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906c32cc90.png" alt="img"></p>
+<h3 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h3><p>主机是服务器 IP，用户名为是 <code>root</code>，方法选择 <code>Public Key</code>，用户密钥即为前面生成的那个：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e906d52865c.png" alt="img"></p>
+<h2 id="刷流系统安装"><a href="#刷流系统安装" class="headerlink" title="刷流系统安装"></a>刷流系统安装</h2><h2 id="服务器选择-1"><a href="#服务器选择-1" class="headerlink" title="服务器选择"></a>服务器选择</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>我们选用 Hetrzner 那款 CPX21，配置如下：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9071c2421f.jpeg" alt="img"></p>
+<p><strong>一点提议：</strong></p>
+<p>盒子卖方在交易时得提供一份如上图的性能测试结果，不然“千里马”盒子一点说服力也没用，莫拿破烂卖高价、坑小白。</p>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>按如下选项创建一台即可：</p>
+<p>区域：德国</p>
+<p>镜像：Debian 10</p>
+<p>服务器：CPX 21</p>
+<p>网络：IPV4、IPV6</p>
+<h2 id="安装刷流系统"><a href="#安装刷流系统" class="headerlink" title="安装刷流系统"></a>安装刷流系统</h2><h3 id="刷流系统介绍"><a href="#刷流系统介绍" class="headerlink" title="刷流系统介绍"></a>刷流系统介绍</h3><p>单纯从刷流来说，我们选用 <a target="_blank" rel="noopener" href="https://github.com/jerry048/Dedicated-Seedbox">jerry048&#x2F;Dedicated-Seedbox</a> ，比我上篇教程里用的 <a target="_blank" rel="noopener" href="https://github.com/amefs/quickbox-lite">QuickBox-Lite</a> 更高效。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jerry048/Dedicated-Seedbox"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://dja6-ksvwjzd-qltxcezl-w6z7n-czu4ar4b.seeseeme.cn/ghcard/pin/username=jerry048&repo=Dedicated-Seedbox&&show_owner=true" alt="img"></a></p>
+<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><h4 id="一键脚本"><a href="#一键脚本" class="headerlink" title="一键脚本"></a>一键脚本</h4><p>依旧是一键脚本，如下，<code>&lt;用户名称&gt;</code>、<code>&lt;用户密码&gt;</code>、<code>&lt;缓存大小(单位:GiB，且为整数)&gt;</code> 需自己配置：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh) &lt;</span><br></pre></td></tr></table></figure>
+
+<p>2023 年 2 月 3 日，有吧友反应脚本的新版本不可用。我也不懂不会改脚本，就把旧版本复刻了一份供大家使用。<br>使用方法：只需要在输入那行命令时把 <code>jerry048</code> 换为 <code>i-abc</code>，即：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- https://raw.githubusercontent.com/i-abc/Dedicated-Seedbox/main/Install.sh)</span><br></pre></td></tr></table></figure>
+
+<p>如果服务器是 CPX21 的话，可以照抄我的，我 <code>缓存大小</code> 为 1GiB，如图：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9077bd97b0.png" alt="img"></p>
+<h4 id="具体安装细节"><a href="#具体安装细节" class="headerlink" title="具体安装细节"></a>具体安装细节</h4><ul>
+<li><p>是否安装 qBittorrent？Y：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079e9a9c6.png" alt="img"></p>
+</li>
+<li><p>4.3.9 版本：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079ed0b4a.png" alt="img"></p>
+</li>
+<li><p>是否安装 Deluge？N：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079eaaf81.png" alt="img"></p>
+</li>
+<li><p>是否安装自动删种？N：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079e852c6.png" alt="img"></p>
+</li>
+<li><p>是否安装魔改 BBR？Y：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079f11256.png" alt="img"></p>
+</li>
+<li><p>选第二个：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9079f608da.png" alt="img"></p>
+<p>安装完成，需要输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p>重启服务器，等一两分钟后我们可以通过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://服务器ip:8080</span><br></pre></td></tr></table></figure>
+
+<p>访问 qBittorrent。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a0bc54d.png" alt="img"></p>
+</li>
+</ul>
+<h2 id="qBittorrent-设置"><a href="#qBittorrent-设置" class="headerlink" title="qBittorrent 设置"></a>qBittorrent 设置</h2><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>用户名、密码为是上一步 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2023-01-12/#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC">一键脚本</a> 里的：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a2ae961.png" alt="img"></p>
+<h3 id="进阶优化"><a href="#进阶优化" class="headerlink" title="进阶优化"></a>进阶优化</h3><p>这是优化版的 qBittorrent，基本设置不用动，我们只需要优化一下高级设置。<br>针对 CPX21，它属于性能强劲的机器，我们只需设置 <code>缓存大小</code>、<code>异步 I/O 线程数</code>这两项：</p>
+<ol>
+<li>缓存大小应设置为机器内存大小的 1&#x2F;4 左右。如果你使用的是 qBittorrent 4.3.x, 则需考虑内存溢出的问题并设置缓存大小为机器内存大小的 1&#x2F;8。</li>
+<li>异步 I&#x2F;O 线程数的基础设定是 4， 该数值对 HDD 比较友好。如果你使用的是 SSD 甚至是 NVMe 的话, 你可以调整此参数到 8 甚至到16.</li>
+</ol>
+<h4 id="缓存大小"><a href="#缓存大小" class="headerlink" title="缓存大小"></a>缓存大小</h4><p>缓存大小我们在执行一键脚本的时候设置过，选择的是 1 GiB，即图中的 1024 MiB。我们安装的 qBittorrent 版本为 4.3.9，按照文档，缓存大小应设置为机器内存大小的 1&#x2F;8（即 512MiB），但经过我实测，设置为 1 GiB 也行，服务器不会崩溃，所以就保持 1024 MiB 不动：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a329592.png" alt="img"></p>
+<h4 id="异步-I-x2F-O-线程数"><a href="#异步-I-x2F-O-线程数" class="headerlink" title="异步 I&#x2F;O 线程数"></a>异步 I&#x2F;O 线程数</h4><p>CPX21 是 Hetzner Cloud 中的一款服务器，硬盘为 NVMe，故异步 I&#x2F;O 线程数我们设置为 16：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a305de1.png" alt="img"></p>
+<h2 id="添加种子"><a href="#添加种子" class="headerlink" title="添加种子"></a>添加种子</h2><h3 id="限速"><a href="#限速" class="headerlink" title="限速"></a>限速</h3><p>我们硬盘只剩 70 GiB，肯定装不完一个完整的大包，所以我们需要拆包，为了便于拆包，我们选择不自动开始。同时做好限速，我限速为 90000 KiB&#x2F;s，求稳：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a35af6d.png" alt="img"></p>
+<h3 id="拆包"><a href="#拆包" class="headerlink" title="拆包"></a>拆包</h3><p>选部分下载即可：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a350bfe.png" alt="img"></p>
+<h2 id="探针（可选）"><a href="#探针（可选）" class="headerlink" title="探针（可选）"></a>探针（可选）</h2><h3 id="探针介绍"><a href="#探针介绍" class="headerlink" title="探针介绍"></a>探针介绍</h3><p>我们可以安装探针来实时监控服务器的运行情况，两个探针可二选一。</p>
+<h4 id="哪吒监控"><a href="#哪吒监控" class="headerlink" title="哪吒监控"></a>哪吒监控</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9085cd96ad.png" alt="img"></p>
+<p>需自建，适合折腾、有基础的人。</p>
+<h4 id="Nodepanels"><a href="#Nodepanels" class="headerlink" title="Nodepanels"></a>Nodepanels</h4><p><a target="_blank" rel="noopener" href="https://nodepanels.com/">https://nodepanels.comNodepanels一个注重隐私安全的服务器探针云监控平台，只需要一条指令，就可以轻松掌控服务器。所有服务器统一管理，支持Linux/Windows/MacOS多系统多平台。</a></p>
+<p>无需自建，直接使用，方便。</p>
+<h5 id="Nodepanels-使用方法"><a href="#Nodepanels-使用方法" class="headerlink" title="Nodepanels 使用方法"></a>Nodepanels 使用方法</h5><ol>
+<li><p>复制命令并输入：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a5f38b4.png" alt="img"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a63c06b.png" alt="img"></p>
+</li>
+<li><p>成功，还可以选择分享给他人查看：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e907a625100.png" alt="img"></p>
+</li>
+</ol>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><ol>
+<li><p>吧友建议</p>
+<blockquote>
+<p>亲测 CPX51 全程顶着 125 MB&#x2F;s，CPX41 前 48小时接近满速后逐渐回落，这两个都是能跑满 20T 删机的，再小的 VPS 的话速度掉的快很多，不过价格对应也便宜，怎么选就仁者见仁了。</p>
+</blockquote>
+</li>
+</ol>
+<p>小硬盘的服务器确实掉速严重，从我选择将 CPX11 这款 40G 硬盘的换为 CPX21 这款 80G 的就可以看出。但我没开 CPX51 那么高配的服务器实测过（因为我没白嫖到试用金，所以扣扣嗖嗖的），全程顶着 125 MB&#x2F;s 这一说法我不能打包票说一定正确，但我感觉是正确的。所以账户试用金余额多的可以开 CPX51 这款试试，CPX51 算下来每 T 上传量的单价可能会更低，而且可以用更少的次数刷更多的上传，省时间来看片，何乐而不为呢。</p>
+<h3 id="做快照"><a href="#做快照" class="headerlink" title="做快照"></a>做快照</h3><p>添加种子试一试下载、上传，如果正常，则把种子删掉，我们该做快照了。</p>
+<p><strong>为什么做快照？</strong></p>
+<p>通过做快照，我们可以将服务器当前的状态（已安装好 qBittorrent）记录下来，保存为一个模板；我们可以用这个模板去 “复制” 创建更多相同配置（已安装好 qBittorrent）的服务器，开箱即用，免去了新开服务器需要再执行一键脚本、安装刷流系统这道步骤。</p>
+<p>先关机，再做快照：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90898bd3c6.png" alt="img"></p>
+<h3 id="批量开机"><a href="#批量开机" class="headerlink" title="批量开机"></a>批量开机</h3><p>镜像选上一步生成的快照，其他选择项和 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E9%80%89%E6%8B%A9%E6%9C%8D%E5%8A%A1%E5%99%A8">上文</a> 一样，一下子就能得到多台已安装有 qBittorrent 的服务器，开箱即用，是不是很棒，是不是很爽。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90898b8429.png" alt="img"></p>
+<h3 id="挂载额外的硬盘（可选）"><a href="#挂载额外的硬盘（可选）" class="headerlink" title="挂载额外的硬盘（可选）"></a>挂载额外的硬盘（可选）</h3><p>一些人可能需要更大的硬盘，比起买有更大硬盘的服务器，我们单独买硬盘来挂载更为划算。</p>
+<h4 id="购买硬盘"><a href="#购买硬盘" class="headerlink" title="购买硬盘"></a>购买硬盘</h4><p>服务器创建好后就可以买硬盘了，我一般选自动挂载：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90898d2ac5.png" alt="img"></p>
+<p>可以看到我们多出来了一块硬盘：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e908991e0be.png" alt="img"></p>
+<h4 id="更改保存路径"><a href="#更改保存路径" class="headerlink" title="更改保存路径"></a>更改保存路径</h4><p>前往 qBittorrent，将保存路径改为新硬盘的挂载点（我这是改的全局路径，针对所有新种子生效；还可以添加种子时为每个种子选择不同的保存路径）：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089990a21.png" alt="img"></p>
+<h4 id="更改权限"><a href="#更改权限" class="headerlink" title="更改权限"></a>更改权限</h4><p>我们添加种子下载，发现报错（此时 Tracker 未报错），说明此时不能写入新硬盘，我们需要更改文件夹的权限。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e90899cd6bc.png" alt="img"></p>
+<p>用 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#SSH-%E5%AE%A2%E6%88%B7%E7%AB%AF">Xftp</a> 这一软件连接服务器，进入 <code>/</code>，更改 <code>mnt</code> 的权限，改为 <code>777</code>，并选择包含子目录：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089bed48b.png" alt="img"></p>
+<p>这下就可以正常下载了：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089d29fe7.png" alt="img"></p>
+<h3 id="删机"><a href="#删机" class="headerlink" title="删机"></a>删机</h3><p>上传跑不动时，我们可以选择删机。<br>为了使所有数据全部汇报上去，我们遵循 <code>暂停种子、等待几分钟、关闭 qBittorrent、分离硬盘（可选）、删除服务器</code> 这一步骤。<br>如图所示就是删机：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089bf12c1.png" alt="img"></p>
+<p>至于 IP 删不删，就看你自己的了，不删的话可以避免 IP 频繁变动；IPv4 单价 0.0008 欧元一小时，30 天算下来共 0.576 欧，和 20 欧比起来算九牛一毛。</p>
+<ol>
+<li>删机是删除服务器（Delete），而不是关机（Power Off），因为即使关机了也照样计费，只有删机才停止计费。</li>
+<li>至于 IP 删不删，就看你自己的了，不删的话可以避免 IP 频繁变动；IPv4 单价 0.0008 欧元一小时，30 天算下来共 0.576 欧，和 20 欧比起来算九牛一毛。</li>
+</ol>
+<h4 id="分离硬盘（可选）"><a href="#分离硬盘（可选）" class="headerlink" title="分离硬盘（可选）"></a>分离硬盘（可选）</h4><p>服务器如果挂载有硬盘，是不能直接删机的，需要先分离硬盘，再删机。如图则是分离硬盘：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089beb41a.png" alt="img"></p>
+<p>硬盘分离下来后是依旧存在且保持计费的，你可以选择留着并挂载到新服务器或者删除。</p>
+<h2 id="问与答"><a href="#问与答" class="headerlink" title="问与答"></a>问与答</h2><p>Sun Oct 30 2022 22:15:02</p>
+<h3 id="⚠-馒头限速规则：单种上传速度小于-125-M-x2F-s（即-125-MiB-x2F-s），非-VIP-超速即封号。"><a href="#⚠-馒头限速规则：单种上传速度小于-125-M-x2F-s（即-125-MiB-x2F-s），非-VIP-超速即封号。" class="headerlink" title="⚠ 馒头限速规则：单种上传速度小于 125 M&#x2F;s（即 125 MiB&#x2F;s），非 VIP 超速即封号。"></a><strong>⚠ 馒头限速规则：单种上传速度小于 125 M&#x2F;s（即 125 MiB&#x2F;s），非 VIP 超速即封号。</strong></h3><p>我的单种上传速度上限设置为 90000 KiB&#x2F;s，比较保守。</p>
+<hr>
+<p>最近大家都开盒子了，再加上现在馒头大包下的人少了，不够分了，掉速严重。</p>
+<p>尽量早上车，选大硬盘的服务器，多下点，情况会好些。</p>
+<hr>
+<p>Q：需要去站点备案吗？</p>
+<p>A：这个问题我不能打包票，我只能说我没备。</p>
+<hr>
+<p>Q：已经成功创建了一个服务器，是不是每次刷完要删了，然后刷之前也建？ 感觉有点麻烦。</p>
+<p>A：有偷懒方法，可参考 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E5%81%9A%E5%BF%AB%E7%85%A7">做快照</a>、<a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E6%89%B9%E9%87%8F%E5%BC%80%E6%9C%BA">批量开机</a>、<a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E5%88%A0%E6%9C%BA">删机</a> 这几部分。</p>
+<hr>
+<p>Q：ip 被标盒了怎么办？</p>
+<p>A：Hetzner 被标盒是板上钉钉的事，不用担心，不需要做任何措施，被标盒了对我们刷大包一点影响也没有，具体原因见 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E7%AB%99%E7%82%B9%E8%A7%84%E5%88%99">站点规则</a>。</p>
+<hr>
+<p>Q：感觉站点的盒子规则对于分享率来讲话，用盒子还是升不到相应级别。</p>
+<p>A：这点不用担心，馒头等级只与分享率挂钩，具体原因见 <a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E7%AB%99%E7%82%B9%E8%A7%84%E5%88%99">站点规则</a>。</p>
+<hr>
+<p>Q：未联系tracker是啥情况？显示 <code>skipping tracker announce(unreachable)</code>。</p>
+<p>A：→ qBittorrent 设置 → 高级，把 <code>验证 HTTPS tracker 证书</code> 取消选择，可参考<a target="_blank" rel="noopener" href="https://www.shifeiti.com/blog/2022-12-09/#%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE">基本设置</a>。</p>
+<hr>
+<p>Q：下了个种子，然后删了，创建完快照二十多个 G 正常吗？</p>
+<p>A：这方面我也不懂。我先后创建了两个快照。一个添加种子测试过下载上传，这个快照体积 4.12 GB；另一个没添加种子，其他方面保持不变，这个快照体积 0.91 GB。通过这两个快照创建的机子都正常，且硬盘都剩余 31.7 GB。</p>
+<hr>
+<p>Q：qBittorrent 正常上传，Tracker 信息栏显示工作中，且无报错，然而馒头却没有增加上传量。</p>
+<p>A：这个问题不止你一个人遇到，我也无法解决，可能是站点 Tracker 服务器方面的问题，你可以问问站点管理员。</p>
+<hr>
+<p>Q：请问最终硬盘只剩下不到 1 GB 会影响性能吗？</p>
+<p>A：不会，我一般也是只剩这么多；甚至有人把硬盘塞满了也没事，但我没验证过。</p>
+<hr>
+<p>Q：在安装好刷流系统后，再次进行 SSH 连接会报如下错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Connecting to 服务器ip:22...</span><br><span class="line">Could not connect to &#x27;服务器ip&#x27; (port 22): Connection failed.</span><br></pre></td></tr></table></figure>
+
+<p>A：可能是安装刷流系统过程中选择了更换 SSH 端口：<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089b9a1fa.png" alt="img">把端口号 <code>22</code> 改为 <code>4747</code> 就能连上了：<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e9089c34778.png" alt="img"></p>
+<hr>
+<p>Q：为什么种子上传没速度之后是选择删机而不是重新换一个种子呢？</p>
+<p>A：对的，是删机；换种子可以，但没必要，原因如下：</p>
+<ol>
+<li>我们可以一次性开多台机子，每台机子刷一个大包。新号配额 5 台机子，等大约半个月后配额就会升级为 10 台了，机子数量不用担心。</li>
+<li>如果一个大包已经没上传速度了，那么其他大包也好不到哪里去，刷大包需要越早上车越好。</li>
+</ol>
+<hr>
+<p>Q：馒头能同时开几个 qBittorrent？</p>
+<p>A：</p>
+<blockquote>
+<p>目前 Tracker 服务器支持单个用户从任意个数的 IP 地址访问站点或上传 &#x2F; 下载。</p>
+<p>然而，对于单种上传 &#x2F; 下载是有限制的。</p>
+<p>对于每个上传中的种子：同一个种子同时间最多允许 3 个做种的连线；</p>
+<p>对于每个下载中的种子：同一个种子同时间最多只允许 1 个下载的连线（这意味着，对于某个种子你一次只能在一个地方下载）。</p>
+</blockquote>
+
+
+
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/02/12/natter/">Natter，不需要中转的内网穿透工具</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/02/12/Markdown%20Reference/">Markdown For Typora</a></div></section></div>
+
+
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="\2023\02\13\flexget-nexusphp\" title="Flexget插件，增强对NexusPHP的过滤"><span class="title">Flexget插件，增强对NexusPHP的过滤</span></a></div></section></div>
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body artalk'>
+      
+
+<div id="artalk_container"><svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"></div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function load_artalk() {
+    if (!document.querySelectorAll("#artalk_container")[0]) return;
+    stellar.loadCSS('https://unpkg.com/artalk@2.4.3/dist/Artalk.css');
+    stellar.loadScript('https://unpkg.com/artalk@2.4.3/dist/Artalk.js', {defer: true}).then(function () {
+      const el = document.getElementById("artalk_container");
+      var path = el.getAttribute('comment_id');
+      if (!path) {
+        path = decodeURI(window.location.pathname);
+      }
+      var artalk = new Artalk({
+        el: '#artalk_container',
+        pageKey: path,
+        pageTitle: '省心的馒头保号教程',
+        server: 'http://nas.lxypcc.tk:23366',
+        placeholder: '',
+        site: '个人博客',
+        darkMode: 'false'
+        })
+      });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    load_artalk();
+  });
+</script>
+
+
+
+<!-- inject -->
+
+
+  </div>
+<!-- hexo injector body_end start -->
+  <style>
+    .highlight {
+      position: relative;
+    }
+    .highlight .code .copy-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 0.5rem;
+      opacity: 0.25;
+      font-weight: 700;
+      color: var(--theme);
+      cursor: pointer;
+      transination: opacity 0.3s;
+    }
+    .highlight .code .copy-btn:hover{
+      color: var(--text-code);
+      opacity: 0.75;
+    }
+    .highlight .code .copy-btn.success {
+      color: var(--swiper-theme-color);
+      opacity: 0.75;
+
+    }
+    
+  </style>
+  <script>
+    const codeElementArr = document.querySelectorAll('.code')
+    codeElementArr.forEach(code => {
+      const codeBeforeWidth = window.getComputedStyle(code, '::before').width.split('px')[0]
+      const codeBeforePadding = window.getComputedStyle(code, '::before').padding.split(' ').pop().split('px')[0]
+  
+      // copy btn 
+      const codeCopyBtn = document.createElement('div')
+      codeCopyBtn.classList.add('copy-btn')
+      codeCopyBtn.style.right = Number(codeBeforeWidth) + Number(codeBeforePadding) * 2 + 'px'
+      codeCopyBtn.innerText = '复制代码'
+      code.appendChild(codeCopyBtn)
+  
+      codeCopyBtn.addEventListener('click', async () => {
+        const currentCodeElement = code.children[0]?.innerText
+        await copyCode(currentCodeElement)
+
+
+        codeCopyBtn.innerText = '复制成功'
+        codeCopyBtn.classList.add('success')
+
+        setTimeout(() => {
+          codeCopyBtn.innerText = '复制代码'
+          codeCopyBtn.classList.remove('success')
+        },1000)
+      })
+    })
+    
+    async function copyCode(currentCode) {
+      console.log(currentCode)
+      console.log('复制代码')
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(currentCode)
+        } catch (error) {
+          // 未获得用户许可
+          console.error(error)
+        }
+      } else {
+        console.error('当前浏览器不支持此api')
+      }
+    }
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
