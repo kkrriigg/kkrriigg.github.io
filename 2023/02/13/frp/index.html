@@ -26,7 +26,7 @@
     <meta name="description" content="路由与NAS 篇二十：家用宽带无公网IP怎么在外访问Nas——Frp内网穿透暴露公网访问及微信回调简明教程2022-07-07 10:39:56 24点赞 155收藏 60评论 写在前面本文主要基于微信回调需求整理的 frp 内网穿透脚本。最终效果就是通过一台带有公网 IP 的服务器实现通过在公网访问你的 Nas 上的应用因为确实涉及到服务器配置、命令行操作，有一定的门槛，我会尽量以新手友好">
 <meta property="og:type" content="article">
 <meta property="og:title" content="家用宽带无公网IP怎么在外访问Nas——Frp内网穿透暴露公网访问及微信回调简明教程">
-<meta property="og:url" content="http://example.com/2023/02/13/frp/index.html">
+<meta property="og:url" content="http://www.lxypcc.ga/blog/2023/02/13/frp/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="路由与NAS 篇二十：家用宽带无公网IP怎么在外访问Nas——Frp内网穿透暴露公网访问及微信回调简明教程2022-07-07 10:39:56 24点赞 155收藏 60评论 写在前面本文主要基于微信回调需求整理的 frp 内网穿透脚本。最终效果就是通过一台带有公网 IP 的服务器实现通过在公网访问你的 Nas 上的应用因为确实涉及到服务器配置、命令行操作，有一定的门槛，我会尽量以新手友好">
 <meta property="og:locale" content="zh_CN">
@@ -82,7 +82,7 @@
 
   
     
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
   
 
@@ -110,9 +110,9 @@
 
   
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">个人博客</div><div class="sub normal cap">— 🖖 浪子游心 🦋 —</div><div class="sub hover cap" style="opacity:0">—  www.lxypcc.ga  —</div></a></div>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/blog/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/blog/"><div class="main" ff="title">个人博客</div><div class="sub normal cap">— 🖖 浪子游心 🦋 —</div><div class="sub hover cap" style="opacity:0">—  www.lxypcc.ga  —</div></a></div>
 
-<nav class="menu dis-select"><a class="nav-item" href="/">博客</a><a class="nav-item" href="/about/">更多</a></nav>
+<nav class="menu dis-select"><a class="nav-item" href="/blog/">博客</a><a class="nav-item" href="/blog/about/">更多</a></nav>
 </header>
 
 
@@ -135,7 +135,7 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/PT/">PT</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/PT/NAS/">NAS</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-02-12T16:54:22.749Z">2023-02-13</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/blog/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/blog/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/PT/">PT</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/blog/categories/PT/NAS/">NAS</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-02-12T16:54:22.749Z">2023-02-13</time></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>家用宽带无公网IP怎么在外访问Nas——Frp内网穿透暴露公网访问及微信回调简明教程</span></h1>
@@ -387,7 +387,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/02/13/hexo_github/">2023-02-13</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/02/13/flexget-nexusphp/">Flexget插件，增强对NexusPHP的过滤</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/blog/2023/02/13/hexo_github/">在github上搭建hexo博客</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/blog/2023/02/13/flexget-nexusphp/">Flexget插件，增强对NexusPHP的过滤</a></div></section></div>
 
 
 <div class="related-wrap reveal" id="related-posts"></div>
@@ -565,7 +565,7 @@
 <!-- required -->
 
   
-<script src="/js/main.js" async></script>
+<script src="/blog/js/main.js" async></script>
 
 
 

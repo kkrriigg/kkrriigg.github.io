@@ -26,7 +26,7 @@
     <meta name="description" content="Markdown For TyporaOverviewMarkdown is created by Daring Fireball; the original guideline is here. Its syntax, however, varies between different parsers or editors. Typora is using GitHub Flavored M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown For Typora">
-<meta property="og:url" content="http://example.com/2023/02/12/Markdown%20Reference/index.html">
+<meta property="og:url" content="http://www.lxypcc.ga/blog/2023/02/12/Markdown%20Reference/index.html">
 <meta property="og:site_name" content="个人博客">
 <meta property="og:description" content="Markdown For TyporaOverviewMarkdown is created by Daring Fireball; the original guideline is here. Its syntax, however, varies between different parsers or editors. Typora is using GitHub Flavored M">
 <meta property="og:locale" content="zh_CN">
@@ -43,7 +43,7 @@
 
   
     
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
   
 
@@ -71,9 +71,9 @@
 
   
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">个人博客</div><div class="sub normal cap">— 🖖 浪子游心 🦋 —</div><div class="sub hover cap" style="opacity:0">—  www.lxypcc.ga  —</div></a></div>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/blog/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="http://nas.lxypcc.tk:4081/i/2023/02/12/63e7dc03069fe.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/blog/"><div class="main" ff="title">个人博客</div><div class="sub normal cap">— 🖖 浪子游心 🦋 —</div><div class="sub hover cap" style="opacity:0">—  www.lxypcc.ga  —</div></a></div>
 
-<nav class="menu dis-select"><a class="nav-item" href="/">博客</a><a class="nav-item" href="/about/">更多</a></nav>
+<nav class="menu dis-select"><a class="nav-item" href="/blog/">博客</a><a class="nav-item" href="/blog/about/">更多</a></nav>
 </header>
 
 
@@ -96,7 +96,7 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Markdown/">Markdown</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-02-12T14:19:49.661Z">2023-02-12</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/blog/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/blog/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/Markdown/">Markdown</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-02-12T14:19:49.661Z">2023-02-12</time></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>Markdown For Typora</span></h1>
@@ -161,7 +161,7 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is [<span class="string">an example</span>](<span class="link">http://example.com/ &quot;Title&quot;</span>) inline link.</span><br><span class="line"></span><br><span class="line">[<span class="string">This link</span>](<span class="link">http://example.net/</span>) has no title attribute.</span><br></pre></td></tr></table></figure>
 
 <p>will produce:</p>
-<p>This is <a href="http://example.com/" title="Title">an example</a> inline link. (<code>&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;</code>)</p>
+<p>This is <a target="_blank" rel="noopener" href="http://example.com/" title="Title">an example</a> inline link. (<code>&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;</code>)</p>
 <p><a target="_blank" rel="noopener" href="http://example.net/">This link</a> has no title attribute. (<code>&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no</code>)</p>
 <h4 id="Internal-Links"><a href="#Internal-Links" class="headerlink" title="Internal Links"></a>Internal Links</h4><p><strong>You can set the href to headers</strong>, which will create a bookmark that allow you to jump to that section after clicking. For example:</p>
 <p>Command(on Windows: Ctrl) + Click <a href="#block-elements">This link</a> will jump to header <code>Block Elements</code>. To see how to write that, please move cursor or click that link with <code>⌘</code> key pressed to expand the element into markdown source.</p>
@@ -170,7 +170,7 @@
 
 <p>In Typora, they will be rendered like so:</p>
 <p>This is [an example][id] reference-style link.</p>
-<p>[id]: <a href="http://example.com/">http://example.com/</a>	“Optional Title Here”</p>
+<p>[id]: <a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a>	“Optional Title Here”</p>
 <p>The implicit link name shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets — for example, to link the word “Google” to the google.com web site, you could simply write:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Google</span>][<span class="symbol"></span>]</span><br><span class="line">And then define the link:</span><br><span class="line"></span><br><span class="line">[<span class="symbol">Google</span>]: <span class="link">http://google.com/</span></span><br></pre></td></tr></table></figure>
 
@@ -237,7 +237,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/02/12/%E7%9C%81%E5%BF%83%E7%9A%84%E9%A6%92%E5%A4%B4%E4%BF%9D%E5%8F%B7%E6%95%99%E7%A8%8B/">省心的馒头保号教程</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/02/11/Telegram-MTG/">Telegram专用代理MTG</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/blog/2023/02/12/%E7%9C%81%E5%BF%83%E7%9A%84%E9%A6%92%E5%A4%B4%E4%BF%9D%E5%8F%B7%E6%95%99%E7%A8%8B/">省心的馒头保号教程</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/blog/2023/02/11/Telegram-MTG/">Telegram专用代理MTG</a></div></section></div>
 
 
 <div class="related-wrap reveal" id="related-posts"></div>
@@ -415,7 +415,7 @@
 <!-- required -->
 
   
-<script src="/js/main.js" async></script>
+<script src="/blog/js/main.js" async></script>
 
 
 
